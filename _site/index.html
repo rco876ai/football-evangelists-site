@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0D0D1A" />
+    <title>The Football Evangelists</title>
+    <meta name="description" content="An unorthodox football cathedral of sermons, parables, and lamentations — treating tactics, players, and the ninety minutes with biblical gravity, poetry, and absurd reverence." />
+
+    <script>
+      /* Apply the saved vesper before first paint — no flash of heresy. */
+      (function () {
+        var saved = localStorage.getItem("tfe-theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Football Evangelists" />
+    <meta property="og:description" content="An unorthodox football cathedral of sermons, parables, and lamentations — treating tactics, players, and the ninety minutes with biblical gravity, poetry, and absurd reverence." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thefootballevangelists.com/" />
+    <meta property="og:image" content="https://thefootballevangelists.com/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://thefootballevangelists.com/" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+
+    <!-- The sacred typefaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/sacred-codex.css" />
+    <script defer src="/js/chapel.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  </head>
+  <body class="page-home">
+    <a class="skip-link" href="#main">Skip to the Word</a>
+    <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+    <header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="The Football Evangelists — return to the Nave">
+      <svg class="brand-mark lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.3 4.3M14.1 14.1l4.3 4.3M18.4 5.6l-4.3 4.3M9.9 14.1l-4.3 4.3" />
+      </svg>
+      <span class="brand-name">The Football Evangelists</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a class="nav-link" href="/">The Nave</a></li>
+        <li><a class="nav-link" href="/archive/">Scriptorium</a></li>
+        <li><a class="nav-link" href="/about/">The Creed</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle Midnight Vespers" aria-pressed="false">
+        <svg class="lucide icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+        <svg class="lucide icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+      </button>
+
+      <button class="menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="mobile-overlay" aria-label="Open the chapel doors">
+        <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+  <button class="icon-btn overlay-close" id="menu-close" type="button" aria-label="Close the chapel doors">
+    <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  </button>
+  <nav class="overlay-nav" aria-label="Mobile">
+    <ul>
+      <li><a href="/">The Nave</a></li>
+      <li><a href="/archive/">Scriptorium</a></li>
+      <li><a href="/about/">The Creed</a></li>
+    </ul>
+  </nav>
+  <p class="overlay-benediction">May your team&#39;s offside trap never be sprung. Amen.</p>
+</div>
+
+
+    <main id="main">
+      <!-- ============ THE GREAT DOORS (HERO) ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="rose-window" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="6.5" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.3 4.3M14.1 14.1l4.3 4.3M18.4 5.6l-4.3 4.3M9.9 14.1l-4.3 4.3" />
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-kicker">A digital cathedral for the faithful of the pitch</p>
+    <h1 class="hero-title" id="hero-title">The <em>Football</em> Evangelists</h1>
+    <p class="hero-subtitle">Where the Beautiful Game Meets the Good Book</p>
+    <a class="btn-gold" href="#sermon-of-the-week">
+      Enter the Chapel
+      <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+
+  <a class="hero-scrollcue" href="#sermon-of-the-week" aria-label="Scroll to this week's sermon">
+    <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </a>
+</section>
+
+<!-- ============ THIS WEEK'S SERMON ============ --><section class="sermon-feature" id="sermon-of-the-week" aria-labelledby="feature-heading">
+  <div class="section-head">
+    <span class="section-kicker">This Week&rsquo;s Sermon</span>
+    <span class="kicker-rule" aria-hidden="true"></span>
+  </div>
+
+  <article class="feature-card">
+    <div class="feature-media stained-glass" role="img" aria-label="A stained-glass rose window in gold, scarlet, teal, and violet">
+      <span class="feature-series">Sunday Sermon</span>
+    </div>
+    <div class="feature-body">
+      <h2 id="feature-heading"><a href="/sermons/parable-of-the-pressing-prophet/">The Parable of the Pressing Prophet</a></h2>
+      <p class="feature-sub">On gegenpressing as a spiritual discipline, and the sanctity of the seven seconds after losing the ball.</p>
+      <p class="feature-excerpt">A wild man came preaching in the wilderness of Westphalia, and his gospel was this: lose the ball, and do not mourn — hunt. On the holiness of the counter-press.</p>
+      <p class="feature-meta">
+        Posted 18 January 2026 &middot; A 12-minute sermon
+      </p>
+      <a class="text-link" href="/sermons/parable-of-the-pressing-prophet/">
+        Read the Sermon
+        <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </article>
+</section><!-- ============ RECENT READINGS ============ -->
+<section class="recent-readings" aria-labelledby="readings-heading">
+  <div class="section-head">
+    <span class="section-kicker" id="readings-heading">Recent Readings</span>
+    <span class="kicker-rule" aria-hidden="true"></span>
+  </div>
+
+  <div class="readings-grid"><article class="reading-card">
+        <p class="card-kicker">Proverbs</p>
+        <h3><a href="/sermons/blessed-are-the-ball-playing-centre-backs/">Blessed Are the Ball-Playing Centre-Backs</a></h3>
+        <p class="card-excerpt">Blessed are those who receive the ball between their own posts and do not hoof it, for they shall be called the sons of total football. Eight beatitudes for the modern defender.</p>
+        <p class="card-meta">11 January 2026 &middot; A 5-minute sermon</p>
+        <a class="text-link" href="/sermons/blessed-are-the-ball-playing-centre-backs/">
+          Read the Sermon
+          <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </article></div>
+
+  <p class="readings-more">
+    <a class="text-link" href="/archive/">
+      Browse the whole Scriptorium
+      <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </p>
+</section>
+
+<!-- ============ JOIN THE CONGREGATION ============ -->
+<section class="congregation" aria-labelledby="congregation-heading">
+  <div class="congregation-inner">
+    <h2 id="congregation-heading">Receive the Weekly Epistle</h2>
+    <p class="congregation-sub">Delivered every Sabbath eve to the faithful.</p>
+
+    <form
+      class="congregation-form"
+      name="congregation"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="congregation" />
+      <p class="hp-field" aria-hidden="true">
+        <label>Do not fill this out, human: <input name="bot-field" tabindex="-1" /></label>
+      </p>
+      <label class="visually-hidden" for="congregation-email">Your email address</label>
+      <input
+        id="congregation-email"
+        type="email"
+        name="email"
+        placeholder="thy.name@faithful.com"
+        autocomplete="email"
+        required
+      />
+      <button class="btn-gold" type="submit">Subscribe</button>
+    </form>
+
+    <p class="congregation-note">No spam. Only scripture, tactics, and the occasional lamentation.</p>
+  </div>
+</section>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">The Football Evangelists</p>
+
+    <p class="footer-benediction">&ldquo;May your team&#39;s offside trap never be sprung. Amen.&rdquo;</p>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">The Nave</a>
+      <span class="footer-sep" aria-hidden="true"></span>
+      <a href="/archive/">Scriptorium</a>
+      <span class="footer-sep" aria-hidden="true"></span>
+      <a href="/about/">The Creed</a>
+    </nav>
+
+    <div class="footer-ornament" aria-hidden="true">
+      <span></span><span class="diamond"></span><span></span>
+    </div>
+
+    <p class="footer-copy">
+      &copy; <span id="footer-year">2026</span> The Football Evangelists &middot; Built with reverence &middot; Deployed on Netlify
+    </p>
+  </div>
+</footer>
+
+
+    <script>
+      /* Netlify Identity — escort the called to the vestry (/admin). */
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function () {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

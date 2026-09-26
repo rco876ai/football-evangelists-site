@@ -1,0 +1,54 @@
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="The Football Evangelists — return to the Nave">
+      <svg class="brand-mark lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.3 4.3M14.1 14.1l4.3 4.3M18.4 5.6l-4.3 4.3M9.9 14.1l-4.3 4.3" />
+      </svg>
+      <span class="brand-name">The Football Evangelists</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a class="nav-link" href="/">The Nave</a></li>
+        <li><a class="nav-link" href="/archive/">Scriptorium</a></li>
+        <li><a class="nav-link" href="/about/">The Creed</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle Midnight Vespers" aria-pressed="false">
+        <svg class="lucide icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+        <svg class="lucide icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+      </button>
+
+      <button class="menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="mobile-overlay" aria-label="Open the chapel doors">
+        <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+  <button class="icon-btn overlay-close" id="menu-close" type="button" aria-label="Close the chapel doors">
+    <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  </button>
+  <nav class="overlay-nav" aria-label="Mobile">
+    <ul>
+      <li><a href="/">The Nave</a></li>
+      <li><a href="/archive/">Scriptorium</a></li>
+      <li><a href="/about/">The Creed</a></li>
+    </ul>
+  </nav>
+  <p class="overlay-benediction">{{ site.benediction }}</p>
+</div>

@@ -1,0 +1,48 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://thefootballevangelists.com
+display_url: https://thefootballevangelists.com
+logo_url: /images/favicon.svg
+
+collections:
+  - name: "sermons"
+    label: "Sermons"
+    label_singular: "Sermon"
+    description: "The sacred scrolls — sermons, parables, lamentations, and revelations."
+    folder: "src/sermons"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{series}} ({{date}})"
+    sortable_fields: ["date", "title", "series"]
+    view_filters:
+      - label: "Featured"
+        field: featured
+        pattern: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "The sermon title, e.g. 'The Parable of the Pressing Prophet'" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", hint: "A one-line poetic subtitle (Open Sans Light on the page)" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - label: "Series"
+        name: "series"
+        widget: "select"
+        default: "Sunday Sermon"
+        options:
+          - { label: "Sunday Sermon", value: "Sunday Sermon" }
+          - { label: "Midweek Epistle", value: "Midweek Epistle" }
+          - { label: "Lamentations", value: "Lamentations" }
+          - { label: "Parables", value: "Parables" }
+          - { label: "Revelations", value: "Revelations" }
+          - { label: "Proverbs", value: "Proverbs" }
+          - { label: "Ten Commandments", value: "Ten Commandments" }
+      - { label: "Tags", name: "tags", widget: "list", required: false, hint: "Lowercase, comma-separated: tactics, faith, gegenpressing" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Shown on cards across the Nave and the Scriptorium." }
+      - { label: "Reading Time", name: "readingTime", widget: "string", default: "7", hint: "Number only — rendered as 'A 7-minute sermon'" }
+      - { label: "Featured (This Week's Sermon)", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Body", name: "body", widget: "markdown", hint: "The Holy Template supports .invocation, .summary-box, .science-box, .pull-quote, .full-bleed, .benediction, .author-note" }

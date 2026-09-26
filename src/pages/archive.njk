@@ -1,0 +1,54 @@
+---
+layout: page.njk
+title: The Scriptorium
+description: "Every sermon, prophecy, and lamentation — preserved for the faithful. The complete archive of The Football Evangelists."
+permalink: /archive/
+---
+
+<section class="archive" aria-labelledby="archive-title">
+  <header class="page-header">
+    <h1 id="archive-title">The Scriptorium</h1>
+    <p class="page-subtitle">Every sermon, prophecy, and lamentation — preserved for the faithful.</p>
+  </header>
+
+  <div class="archive-tools">
+    <label class="visually-hidden" for="archive-search">Search the sacred texts</label>
+    <input
+      class="archive-search"
+      id="archive-search"
+      type="search"
+      placeholder="Search the sacred texts&hellip;"
+      autocomplete="off"
+    />
+
+    <div class="filter-tabs" role="group" aria-label="Filter sermons by series">
+      <button class="pill active" type="button" data-series="all" aria-pressed="true">All Sermons</button>
+      <button class="pill" type="button" data-series="Sunday Sermon" aria-pressed="false">Sunday Sermon</button>
+      <button class="pill" type="button" data-series="Midweek Epistle" aria-pressed="false">Midweek Epistle</button>
+      <button class="pill" type="button" data-series="Lamentations" aria-pressed="false">Lamentations</button>
+      <button class="pill" type="button" data-series="Parables" aria-pressed="false">Parables</button>
+      <button class="pill" type="button" data-series="Revelations" aria-pressed="false">Revelations</button>
+    </div>
+  </div>
+
+  <div class="readings-grid archive-grid" id="archive-grid">
+    {%- for s in collections.sermons -%}
+    <article class="reading-card" data-series="{{ s.data.series }}">
+      <p class="card-kicker">{{ s.data.series }}</p>
+      <h3><a href="{{ s.url }}">{{ s.data.title }}</a></h3>
+      <p class="card-excerpt">{{ s.data.excerpt }}</p>
+      <p class="card-meta">{{ s.date | readableDate }} &middot; A {{ s.data.readingTime }}-minute sermon</p>
+      <a class="text-link" href="{{ s.url }}">
+        Read the Sermon
+        <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </article>
+    {%- endfor -%}
+  </div>
+
+  <div class="load-more-wrap">
+    <button class="btn-gold load-more" type="button" id="load-more">Load More Sermons</button>
+  </div>
+</section>

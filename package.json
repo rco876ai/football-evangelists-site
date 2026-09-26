@@ -1,0 +1,15 @@
+{
+  "name": "football-evangelists",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Football Evangelists — a digital cathedral where the beautiful game meets the Good Book. Eleventy + Netlify + Decap CMS.",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "luxon": "^3.4.4"
+  }
+}

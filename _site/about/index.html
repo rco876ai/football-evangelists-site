@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0D0D1A" />
+    <title>The Creed · The Football Evangelists</title>
+    <meta name="description" content="What we believe: the confession of faith of The Football Evangelists — one beautiful game, the pitch almighty." />
+
+    <script>
+      /* Apply the saved vesper before first paint — no flash of heresy. */
+      (function () {
+        var saved = localStorage.getItem("tfe-theme");
+        if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Creed · The Football Evangelists" />
+    <meta property="og:description" content="What we believe: the confession of faith of The Football Evangelists — one beautiful game, the pitch almighty." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://thefootballevangelists.com/about/" />
+    <meta property="og:image" content="https://thefootballevangelists.com/images/og-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://thefootballevangelists.com/about/" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+
+    <!-- The sacred typefaces -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/sacred-codex.css" />
+    <script defer src="/js/chapel.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  </head>
+  <body class="">
+    <a class="skip-link" href="#main">Skip to the Word</a>
+    <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
+
+    <header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="The Football Evangelists — return to the Nave">
+      <svg class="brand-mark lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" />
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.3 4.3M14.1 14.1l4.3 4.3M18.4 5.6l-4.3 4.3M9.9 14.1l-4.3 4.3" />
+      </svg>
+      <span class="brand-name">The Football Evangelists</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul>
+        <li><a class="nav-link" href="/">The Nave</a></li>
+        <li><a class="nav-link" href="/archive/">Scriptorium</a></li>
+        <li><a class="nav-link" href="/about/">The Creed</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Toggle Midnight Vespers" aria-pressed="false">
+        <svg class="lucide icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+        </svg>
+        <svg class="lucide icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+      </button>
+
+      <button class="menu-btn" id="menu-open" type="button" aria-expanded="false" aria-controls="mobile-overlay" aria-label="Open the chapel doors">
+        <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+  <button class="icon-btn overlay-close" id="menu-close" type="button" aria-label="Close the chapel doors">
+    <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  </button>
+  <nav class="overlay-nav" aria-label="Mobile">
+    <ul>
+      <li><a href="/">The Nave</a></li>
+      <li><a href="/archive/">Scriptorium</a></li>
+      <li><a href="/about/">The Creed</a></li>
+    </ul>
+  </nav>
+  <p class="overlay-benediction">May your team&#39;s offside trap never be sprung. Amen.</p>
+</div>
+
+
+    <main id="main">
+      
+<div class="page-wrap">
+  
+<section class="creed" aria-labelledby="creed-title">
+  <header class="page-header">
+    <h1 id="creed-title">The Creed</h1>
+    <p class="page-subtitle">What we confess, in one voice, before every kickoff.</p>
+  </header>
+
+  <div class="creed-body">
+    <p class="creed-first">We believe in one beautiful game, the pitch almighty, maker of all fixtures and friendlies, of all things visible and replayed on VAR. We believe in one ball, round and true, begotten not made, of one being with the boot; through it all goals were made. For us and for our salvation it came down from the bootroom, was struck by the laces, and became goal.</p>
+
+    <p>The Football Evangelists exists because the match report has grown cold and the hot take has grown lukewarm. Somewhere between the expected-goals spreadsheet and the transfer rumour mill, the wonder went missing — so we built a cathedral where it could be found again. Here, a gegenpress is a spiritual discipline, a Cruyff turn is a small resurrection, and a last-minute equaliser at a rain-soaked away end is preached as exactly what it is: grace, undeserved and unrepeatable.</p>
+
+    <p>We hold these truths to be self-evident: that a well-weighted through ball is a form of charity; that the low block tests the faith of even the devout; that no player shall be slandered beyond what is meet, for they too are fearfully and wonderfully made — even the centre-forward who has not scored since the Feast of St. Stephen. We do not deal in gossip, only gospel. We do not do transfer rumours; we do revelation.</p>
+
+    <p>So come as you are: season-ticket saint or armchair agnostic, ultras' curate or casual pilgrim. Bring your doubts about the referee — we have several of our own, written down and indexed. Take a pew. The sermon is about to begin, and extra time is never guaranteed.</p>
+  </div>
+
+  <div class="author-block">
+    <div class="author-avatar stained-glass" role="img" aria-label="A stained-glass portrait of the author">
+      <span class="author-initials">RC</span>
+    </div>
+    <h2 class="author-name">Reverend Rowan Crossbar</h2>
+    <p class="author-bio">
+      Rowan once scored a hat-trick in a five-a-side friendly and has dined out on it for eleven years. He writes about tactics with the serene confidence of a man who has never successfully coached anything larger than a Subbuteo XI. He lives above a defunct sports bar, which he describes, without irony, as &ldquo;dwelling above my church.&rdquo;
+    </p>
+  </div>
+</section>
+
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">The Football Evangelists</p>
+
+    <p class="footer-benediction">&ldquo;May your team&#39;s offside trap never be sprung. Amen.&rdquo;</p>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="/">The Nave</a>
+      <span class="footer-sep" aria-hidden="true"></span>
+      <a href="/archive/">Scriptorium</a>
+      <span class="footer-sep" aria-hidden="true"></span>
+      <a href="/about/">The Creed</a>
+    </nav>
+
+    <div class="footer-ornament" aria-hidden="true">
+      <span></span><span class="diamond"></span><span></span>
+    </div>
+
+    <p class="footer-copy">
+      &copy; <span id="footer-year">2026</span> The Football Evangelists &middot; Built with reverence &middot; Deployed on Netlify
+    </p>
+  </div>
+</footer>
+
+
+    <script>
+      /* Netlify Identity — escort the called to the vestry (/admin). */
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function () {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

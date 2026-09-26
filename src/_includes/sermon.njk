@@ -1,0 +1,44 @@
+{% extends "base.njk" %}
+{% set ogType = "article" %}
+
+{% block content %}
+<article class="sermon-article">
+  <header class="sermon-header">
+    <a class="sermon-breadcrumb" href="/archive/">
+      <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M19 12H5M12 19l-7-7 7-7" />
+      </svg>
+      The Scriptorium
+    </a>
+    <h1 class="sermon-title">{{ title }}</h1>
+    {% if subtitle %}<p class="sermon-subtitle">{{ subtitle }}</p>{% endif %}
+    <p class="sermon-meta">
+      Posted <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+      &middot; {{ series }} &middot; A {{ readingTime }}-minute sermon
+    </p>
+  </header>
+
+  <div class="sermon-body">
+    {{ content | safe }}
+  </div>
+
+  <aside class="related-sermons" aria-labelledby="related-heading">
+    <h2 id="related-heading">Further Readings from the Scriptorium</h2>
+    <ul>
+      {%- for s in collections.sermons -%}
+        {%- if s.url != page.url and loop.index <= 4 -%}
+        <li>
+          <a href="{{ s.url }}">{{ s.data.title }}</a>
+          <span class="rs-meta">{{ s.data.series }} &middot; A {{ s.data.readingTime }}-minute sermon</span>
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </aside>
+
+  <section class="comment-section" aria-labelledby="comment-heading">
+    <h2 id="comment-heading" class="cc-heading">The Congregation Speaks</h2>
+    <p>The comment system is being consecrated. Return soon, faithful ones.</p>
+  </section>
+</article>
+{% endblock %}

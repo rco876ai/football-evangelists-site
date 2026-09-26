@@ -1,0 +1,136 @@
+---
+layout: base.njk
+bodyClass: page-home
+permalink: /
+---
+
+{%- set featured = collections.featuredSermon[0] -%}
+
+<!-- ============ THE GREAT DOORS (HERO) ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="rose-window" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6" stroke-linecap="round">
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="6.5" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 3v6M12 15v6M3 12h6M15 12h6M5.6 5.6l4.3 4.3M14.1 14.1l4.3 4.3M18.4 5.6l-4.3 4.3M9.9 14.1l-4.3 4.3" />
+    </svg>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-kicker">A digital cathedral for the faithful of the pitch</p>
+    <h1 class="hero-title" id="hero-title">The <em>Football</em> Evangelists</h1>
+    <p class="hero-subtitle">{{ site.subtitle }}</p>
+    <a class="btn-gold" href="#sermon-of-the-week">
+      Enter the Chapel
+      <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+
+  <a class="hero-scrollcue" href="#sermon-of-the-week" aria-label="Scroll to this week's sermon">
+    <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m6 9 6 6 6-6" />
+    </svg>
+  </a>
+</section>
+
+<!-- ============ THIS WEEK'S SERMON ============ -->
+{%- if featured -%}
+<section class="sermon-feature" id="sermon-of-the-week" aria-labelledby="feature-heading">
+  <div class="section-head">
+    <span class="section-kicker">This Week&rsquo;s Sermon</span>
+    <span class="kicker-rule" aria-hidden="true"></span>
+  </div>
+
+  <article class="feature-card">
+    <div class="feature-media stained-glass" role="img" aria-label="A stained-glass rose window in gold, scarlet, teal, and violet">
+      <span class="feature-series">{{ featured.data.series }}</span>
+    </div>
+    <div class="feature-body">
+      <h2 id="feature-heading"><a href="{{ featured.url }}">{{ featured.data.title }}</a></h2>
+      {% if featured.data.subtitle %}<p class="feature-sub">{{ featured.data.subtitle }}</p>{% endif %}
+      <p class="feature-excerpt">{{ featured.data.excerpt }}</p>
+      <p class="feature-meta">
+        Posted {{ featured.date | readableDate }} &middot; A {{ featured.data.readingTime }}-minute sermon
+      </p>
+      <a class="text-link" href="{{ featured.url }}">
+        Read the Sermon
+        <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </article>
+</section>
+{%- endif -%}
+
+<!-- ============ RECENT READINGS ============ -->
+<section class="recent-readings" aria-labelledby="readings-heading">
+  <div class="section-head">
+    <span class="section-kicker" id="readings-heading">Recent Readings</span>
+    <span class="kicker-rule" aria-hidden="true"></span>
+  </div>
+
+  <div class="readings-grid">
+    {%- for s in collections.sermons -%}
+      {%- if s.url != featured.url and loop.index <= 4 -%}
+      <article class="reading-card">
+        <p class="card-kicker">{{ s.data.series }}</p>
+        <h3><a href="{{ s.url }}">{{ s.data.title }}</a></h3>
+        <p class="card-excerpt">{{ s.data.excerpt }}</p>
+        <p class="card-meta">{{ s.date | readableDate }} &middot; A {{ s.data.readingTime }}-minute sermon</p>
+        <a class="text-link" href="{{ s.url }}">
+          Read the Sermon
+          <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </article>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <p class="readings-more">
+    <a class="text-link" href="/archive/">
+      Browse the whole Scriptorium
+      <svg class="lucide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </p>
+</section>
+
+<!-- ============ JOIN THE CONGREGATION ============ -->
+<section class="congregation" aria-labelledby="congregation-heading">
+  <div class="congregation-inner">
+    <h2 id="congregation-heading">Receive the Weekly Epistle</h2>
+    <p class="congregation-sub">Delivered every Sabbath eve to the faithful.</p>
+
+    <form
+      class="congregation-form"
+      name="congregation"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="congregation" />
+      <p class="hp-field" aria-hidden="true">
+        <label>Do not fill this out, human: <input name="bot-field" tabindex="-1" /></label>
+      </p>
+      <label class="visually-hidden" for="congregation-email">Your email address</label>
+      <input
+        id="congregation-email"
+        type="email"
+        name="email"
+        placeholder="thy.name@faithful.com"
+        autocomplete="email"
+        required
+      />
+      <button class="btn-gold" type="submit">Subscribe</button>
+    </form>
+
+    <p class="congregation-note">No spam. Only scripture, tactics, and the occasional lamentation.</p>
+  </div>
+</section>
